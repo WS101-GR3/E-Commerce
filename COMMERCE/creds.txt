@@ -1,0 +1,5 @@
+BELOW ARE THE CREDENTIALS FOR ADMIN PANEL
+
+
+username = GR3
+password = group3-ws101

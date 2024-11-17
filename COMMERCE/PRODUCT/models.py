@@ -1,5 +1,9 @@
 from django.db import models
 
+# imports model from different application
+from STORE.models import Store
+
+
 # Create your models here.
 
 class Product(models.Model):
@@ -12,6 +16,7 @@ class Product(models.Model):
     ]
 
     product_id = models.BigAutoField(null=False, primary_key=True)
+    product_store = models.ForeignKey(Store, on_delete=models.CASCADE, default=None)
     product_category = models.CharField(max_length=200, choices=category, default=category[0])
     product_name = models.CharField(max_length=200)
     product_description = models.TextField()

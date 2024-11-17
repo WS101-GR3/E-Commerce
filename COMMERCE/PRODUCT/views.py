@@ -1,7 +1,12 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Product
 
 # Create your views here.
 
-def prod_list(request):
-    return HttpResponse('PRODUCT PAGE')
+
+def product_list_page(request, category):
+    product_target = Product.objects.filter(category=category)
+    return render(request, 'PRODUCT/product_page.html',{
+        'products':product_target,
+        'category':category
+    })

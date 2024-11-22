@@ -8,7 +8,6 @@ from STORE.models import Store
 
 class Product(models.Model):
     category = [
-        ('Laptop','Laptop'),
         ('Motherboard','Motherboard'),
         ('Processor','Processor'),
         ('Storage','Storage'),
@@ -35,7 +34,13 @@ class Product(models.Model):
 
 
 class ProductBundle(models.Model):
+    category = [
+        ('Laptop','Laptop'),
+        ('Desktop','Desktop')
+    ]
+
     unit_id = models.BigAutoField(null=False, primary_key=True)
+    bundle_category = models.CharField(max_length=100, choices=category, default=category[0])
     bundle_name = models.CharField(max_length=200)
     motherboard_unit = models.ForeignKey(Product, on_delete=models.CASCADE, default=None, related_name='bundle_motherboard')
     processor_unit= models.ForeignKey(Product, on_delete=models.CASCADE, default=None, related_name='bundle_processor')

@@ -1,0 +1,280 @@
+{% extends 'master.html' %}
+
+
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static '/styles/checkout.css' %}">
+<div class="nav-title">
+    <h1>CHECK OUT</h1>
+    <p>
+        <!-- to HOME                             current page -->
+        <a href="{% url 'product:home' %}">Home</a> 
+        > 
+        <a href="{% url 'product:system_builder' %}">System Builder</a> 
+        >
+        <a href="{% url 'product:check_out' %}">check out</a>
+    </p>
+    
+</div>
+<div class="check_container">
+    <div class="chck_1box">
+        <h3 class="review_title">REVIEW ORDER</h3> 
+
+
+        <ul class="rev_product">
+
+            <!-- <button class="x_btn">x</button> -->
+    <!-- django tags  -->
+            <li class="all_review">
+                <img src="" alt="Product Image">
+                <div class="product-card">
+                    <h5>Product</h5>
+                    <p>Info: Desc</p>
+                    <p>Info: Desc</p>
+                    <div class="qty_div">
+                        <div>
+                            <label for="dropdown">Qty: </label>
+                            <select id="dropdown" name="options">
+                                <option value="option"></option>
+                                <option value="option1">1</option>
+                                <option value="option2">2</option>
+                                <option value="option3">3</option>
+                            </select>
+                        </div>
+                        <p><span>Price</span></p>
+                    </div>
+                </div>
+                <button class="x_btn">x</button>
+            </li>
+<!-- ==================================================================================== -->
+            <li class="all_review">
+                <img src="" alt="Product Image">
+                <div class="product-card">
+                    <h5>Product</h5>
+                    <p>Info: Desc</p>
+                    <p>Info: Desc</p>
+                    <div class="qty_div">
+                        <div>
+                            <label for="dropdown">Qty: </label>
+                            <select id="dropdown" name="options">
+                                <option value="option"></option>
+                                <option value="option1">1</option>
+                                <option value="option2">2</option>
+                                <option value="option3">3</option>
+                            </select>
+                        </div>
+                        <p><span>Price</span></p>
+                    </div>
+                </div>
+                <button class="x_btn">x</button>
+            </li>
+
+            <li class="all_review">
+                <img src="" alt="Product Image">
+                <div class="product-card">
+                    <h5>Product</h5>
+                    <p>Info: Desc</p>
+                    <p>Info: Desc</p>
+                    <div class="qty_div">
+                        <div>
+                            <label for="dropdown">Qty: </label>
+                            <select id="dropdown" name="options">
+                                <option value="option"></option>
+                                <option value="option1">1</option>
+                                <option value="option2">2</option>
+                                <option value="option3">3</option>
+                            </select>
+                        </div>
+                        <p><span>Price</span></p>
+                    </div>
+                </div>
+                <button class="x_btn">x</button>
+            </li>
+        </ul>
+        <hr class="styled-hr2">
+
+        <div class="subtotal_div">
+            <p>SUBTOTAL</p>
+            <p>Price</p>
+        </div>
+
+        <div class="delivery_container">
+            <p class="select_title">Select Delivery</p>
+            <div class="delivery_div">
+                <p class="delivery_option1">P8 PHP</p>
+                <div class="delivery_info">
+                    <div>
+                        <p>Regular</p>
+                        <p>Description</p>
+                    </div>
+                    <input type="radio" name="delivery" id="regular">
+                </div>
+                
+            </div>
+            <div class="delivery_div">
+                <p class="delivery_option1">P8 PHP</p>
+                <div class="delivery_info">
+                    <div>
+                        <p>Regular</p>
+                        <p>Description</p>
+                    </div>
+                    <input type="radio" name="delivery" id="regular">
+                </div>
+                
+            </div>
+            <div></div>
+        </div>
+
+        
+    </div>
+    <div class="chck_2box">
+        <h3 class="delivery_title">DELIVERY ADDRESS</h3>
+        <h6 class="fields">All fields required</h6>
+
+        <div class="input_container">
+            <div>
+                <h5>First name</h5>
+                <input type="text">
+            </div>
+
+            <div>
+                <h5>Last name</h5>
+                <input type="text">
+            </div>
+
+            <div>
+                <h5>Telephone</h5>
+                <input type="text">
+            </div>
+
+            <div>
+                <h5>Delivery Address</h5>
+                <input type="text">
+                <input type="text" class="inp_text">
+                <input type="text" class="inp_text">
+            </div>
+
+            <div>
+                <h5>House Description</h5>
+                <textarea name="" id=""></textarea>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="chck_3box">
+        <div class="inside_3box">
+            <h3 class="payment_title">SELECT PAYMENT METHOD</h3>
+            <table>
+                <tr>
+                    <td class="for_bordertop">
+                        <img src="" alt="cash image">
+                        <div class="td_container">
+                            <p>Cash</p>
+                            <input type="radio" name="choice" value="option1">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="" alt="card image">
+                        <div class="td_container"> 
+                            <p>Card</p>
+                            <button>></button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="" alt="gcash image">
+                        <div class="td_container"> 
+                            <p>G-cash</p>
+                            <button>></button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="for_borderbottom">
+                        <img src="" alt="maya image">
+                        <div class="td_container"> 
+                            <p>Maya</p>
+                            <input type="radio" name="choice" value="option1">
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="inside2_3box">
+            <h3 class="order_title">ORDER SUMMARY</h3>
+
+            <div class="price_product">
+                <p>1x Product name</p>
+                <p>Price</p>
+            </div>
+
+            <hr class="styled-hr2">
+
+            <div class="subtotal_div">
+                <p>SUBTOTAL</p>
+                <p>Price</p>
+            </div>
+
+            <div class="shipping_div">
+                <div>
+                    <p>Shipping to {address}</p>
+                    <p>Express (Description)</p>
+                </div>
+                <p>Price</p>
+            </div>
+            
+            <div class="sales_tax">
+                <p>Sales Tax</p>
+                <p>Price</p>
+            </div>
+
+            <div class="order_total">
+                <div class="order_text">
+                    <h5>ORDER TOTAL </h5>
+                    <p>Price</p>
+                </div>
+            </div>
+        </div>
+
+    
+        <button class="order_btn" ><a href="{% url 'product:home' %}" class="complete-order-btn">Complete Order</a></button>
+    </div>
+</div>
+
+<div class="payment_container">
+    <div>
+        <p>#-------ito ay sa card--------#</p>
+        <div>
+            <p>Card number</p>
+            <input type="text">
+        </div>
+
+        <div>
+            <p>Expiration date</p>
+            <input type="text">
+        </div>
+
+        <div>
+            <p>Security Code</p>
+            <input type="text">
+        </div>
+
+        <div>
+            <p>Cardholder name</p>
+            <input type="text">
+        </div>
+    </div>
+
+    <div>
+        <p>#------ito ay sa gcash--------#</p>
+        <button>Link your Gcash account (pupunta sa gcash)</button>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%; 
+}
+
+.allcart_container {
+    height: 100%;
+    background-color: #d8d8d8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cart_info {
+    height: 100vh;
+    width: 70%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.basket_container {
+    width: 100%;
+    height: 7rem;
+    /* background-color: aliceblue; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.search_div {
+    width: 60%;
+    /* background-color: aqua; */
+}
+
+
+.search_div input {
+    height: 2rem ;
+    width: 70%;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+.scrollbar {
+    width: 90%;
+    /* background-color: green; */
+    position: relative;
+    overflow-y: scroll;
+    height: 70%;
+}
+
+.div_each {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: beige; */
+    margin: 1rem 0 0 0 ;
+}
+
+.for_checkbox {
+    /* background-color: blue; */
+    height: 3rem;
+    width: 8rem;
+}
+
+.for_checkbox input {
+    width: 100%;
+    height: 100%;
+}
+
+.box_text {
+    display: flex;
+    width: 80%;
+    height: 7rem;
+    /* background-color: blueviolet; */
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.for_space {
+    width: 95%;
+    height: 5rem;
+    /* background-color: aliceblue; */
+    display: flex;
+}
+
+
+.product_text {
+    width: 90%;
+    /* background-color: aqua; */
+}
+
+.product_name {
+    height: 1.7rem;
+}
+
+.price_text {
+    /* display: flex;
+    justify-content: right; */
+    text-align: right;
+    height: 1.5rem;
+    /* background-color: aquamarine; */
+}
+
+.button_div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button_div button {
+    width: 4rem;
+    height: 1.8rem;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.checkout_container {
+    width: 100%;
+    background-color: #444;
+    height: 6rem;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+
+
+}
+
+.checkout_div {
+    width: 70%;
+    /* background-color: antiquewhite; */
+    height: 4rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.checkout_div button {
+    width: 55%;
+    height: 2.8rem;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.checkout_text {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    /* background-color: aquamarine; */
+    width: 35%;
+}
+
+.vertical_line {
+    width: 2px; 
+    height: 50px; 
+    background-color: gray; 
+    margin: 0 10px;
+}
+
+.for_flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.for_flex p {
+    color: white;
+}

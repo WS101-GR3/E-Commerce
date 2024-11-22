@@ -29,6 +29,7 @@ urlpatterns = [
 
 
     path('product/', include('PRODUCT.urls')),
+    path('user/', include('USER.urls')),
     path('', views.home_page, name='HOME'),
     path('admin/', admin.site.urls),
 ]

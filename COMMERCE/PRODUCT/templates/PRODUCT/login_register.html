@@ -11,11 +11,11 @@
 {% if page == 'login'%}
 
 <div class="headerLog">
-    <p> <a href="{% url 'product:home' %}">home</a> > <a href="{% url 'product:login' %}">Login</a></p>
+    <p> <a href="{% url 'PRODUCT:home' %}">home</a> > <a href="{% url 'PRODUCT:login' %}">Login</a></p>
 </div>
 {% else %}
 <div class="headerLog">
-    <p> <a href="{% url 'product:home' %}">home</a> > <a href="{% url 'product:login' %}">Register</a></p>
+    <p> <a href="{% url 'PRODUCT:home' %}">home</a> > <a href="{% url 'PRODUCT:login' %}">Register</a></p>
 </div>
 {% endif %}
 
@@ -36,7 +36,7 @@
         </form>
     
         <p>haven't signed up yet ?</p>
-        <a href="{% url 'product:register' %}">Sign Up</a>
+        <a href="{% url 'PRODUCT:register' %}">Sign Up</a>
     </div>
     
     {% else %}
@@ -93,28 +93,10 @@
     
         <div class="register">
             Do you already have an account?
-            <a href="{% url 'product:login' %}"><button id="register-link">Log In here</button></a>
+            <a href="{% url 'PRODUCT:login' %}"><button id="register-link">Log In here</button></a>
         </div>
     </div>
-    <!-- <div>
-        <form method="POST" action="">
-            {% csrf_token %}
-            <div class="input-group">
-                {{form.username}}
-            </div>
-            <div>
-                {{form.password1}}
-            </div>
-            <div>
-                {{form.password2}}
-            </div>
-    
-            <input type="submit" value="Register" />
-        </form>
-    
-        <p>already signed up yet ?</p>
-        <a href="{% url 'product:login' %}">Login</a>
-    </div> -->
+
     {% endif %}
 
 </section>

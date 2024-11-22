@@ -25,9 +25,7 @@ class Product(models.Model):
     product_rate = models.BigIntegerField(default=0)
     isSoldOut = models.BooleanField(default=False)
 
-    # Foreign Keys:
-    # product_reviews
-    # product_shop
+
 
     def __str__(self) -> str:
         return self.product_name

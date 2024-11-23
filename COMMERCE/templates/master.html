@@ -33,28 +33,27 @@
             THE STYLING GOES HERE
         {% endcomment %}
         <div class="logo-search-user-container">
-            <h1 style="opacity: 0;">....</h1>
-            <h1>PCNEED</h1>
-            <div class="search-user-container">
-                {% if request.user.is_authenticated %}
-                <p>Hello {{request.user}}</p>
-                <a href="#">Logout</a>
-                {% else %}
-                <a href="#">Login</a>
-                <a href="#">Cart</a>  
-                {% endif %}
-              
-            </div>
-            
+          <h1 style="opacity: 0;">....</h1>
+          <h1>PCNEED</h1>
+          <div class="search-user-container">
+              {% if request.user.is_authenticated %}
+              <p>Hello {{request.user}}</p>
+              <a href="{% url 'PRODUCT:logout' %}">Logout</a>
+              {% else %}
+              <a href="{% url 'PRODUCT:login' %}">Login</a>
+              <a href="{% url 'PRODUCT:addtocart' %}">Cart</a>
+              {% endif %}
+          </div>
+          
+      </div>
         </div>
         <hr class="styled-hr">
 
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">System Builder</a></li>
-            <li><a href="#">Prebuild PC</a></li>
-            <li><a href="#">Laptop</a></li>
-            
+          <li><a href="{% url 'PRODUCT:home' %}">Home</a></li>
+          <li><a href="{% url 'PRODUCT:system_builder' %}">System Builder</a></li>
+          <li><a href="{% url 'PRODUCT:pre_build_pc' %}">Prebuild PC</a></li>
+          <li><a href="{% url 'PRODUCT:laptop' %}">Laptop</a></li>
         </ul>
 
     </nav>

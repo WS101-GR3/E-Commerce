@@ -1,10 +1,275 @@
-{% extends "master.html" %}
+{% extends 'master.html' %}
 
-{% block title %}
-    Home | APP
-{% endblock  %}
-
+{% block title %}PCNEED{% endblock %}
 
 {% block content %}
-    <h1>HOME PAGE</h1>
-{% endblock  %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+
+<html>
+    <section class="home-hero-section">
+        <h1>TITLE HERE</h1>
+        <h2>SUBTITLE HERE</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur 
+            adipisicing elit. Nemo ratione necessitatibus 
+            sint asperiores, totam non voluptatibus esse 
+            accusantium ad, magni ullam accusamus soluta 
+            fugit aut omnis, adipisci reicien</p>
+        <button class="home-button-no1" onclick="location.href='/#home-latest-product-container'">button #1</button>
+    </section>
+
+    <!-- ===================================== LATEST PRODUCT DISPLAY ===================================== -->
+    <section id="home-latest-product-container">
+        <div class="latest-product-container">
+            <aside class="latest-product-text">
+                <h1>LATEST BUILD</h1>
+                <p>description description 
+                    description description
+                    description description
+                    description description
+                </p>
+                <button class="button2">Button #2</button>
+            </aside>
+            <ul class="list-ng-latest"> 
+<!-- dito isangat ang DJANGO tags -->
+ <!-- product img,name,description,price and reviews dito -->
+                <li class="latest-product">
+                    <div class="latest-product-img">
+                        <img src="" alt="image here">
+                    </div>
+                    <div class="latest-product-info">
+                        <h1>title</h1>
+                        <p>description</p>
+                    </div>
+                    
+                    <div class="price-review">
+                        <p>price</p>
+                        <a href="">review</a>
+                    </div>
+                </li>
+<!-- ==================================================== -->
+<!-- dummy products -->
+
+                <li class="latest-product">
+                    <div class="latest-product-img">
+                        <img src="" alt="image here">
+                    </div>
+                    <div class="latest-product-info">
+                        <h1>title</h1>
+                        <p>description</p>
+                    </div>
+                    
+                    <div class="price-review">
+                        <p>price</p>
+                        <a href="">review</a>
+                    </divc>
+                </li>
+                <li class="latest-product">
+                    <div class="latest-product-img">
+                        <img src="" alt="image here">
+                    </div>
+                    <div class="latest-product-info">
+                        <h1>title</h1>
+                        <p>description</p>
+                    </div>
+                    
+                    <div class="price-review">
+                        <p>price</p>
+                        <a href="">review</a>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </section>
+    <!-- ===================================== PRE-BUILD SHOWCASE DISPLAY ===================================== -->
+
+    <section class="home-prebuilds">
+        <div class="prebuild-product-container">
+            <ul class="list-ng-prebuild">
+                <div class="prebuild-product-container-text">
+                    <h1>Pre-Build Products</h1>
+                    <p>Lorem ipsum, dolor sit amet 
+                        consectetur adipisicing elit. 
+                        Eveniet mollitia voluptate magni s
+                        uscipit dolore culpa, modi ipsa eaque.
+                    </p>
+                    <button class="button3">See More</button>
+                </div>
+                <li class="prebuild-product">
+                    <div class="prebuild-product-img">
+                        <img src="" alt="image here">
+                    </div>
+                    <div class="prebuild-product-info">
+                        <h1>title</h1>
+                        <p>description</p>
+                    </div>
+                    
+                    <div class="prebuild-price-review">
+                        <p>price</p>
+                        <a href="">review</a>
+                    </div>
+                </li>
+                <li class="prebuild-product">
+                    <div class="prebuild-product-img">
+                        <img src="" alt="image here">
+                    </div>
+                    <div class="prebuild-product-info">
+                        <h1>title</h1>
+                        <p>description</p>
+                    </div>
+                    
+                    <div class="prebuild-price-review">
+                        <p>price</p>
+                        <a href="">review</a>
+                    </div>
+                </li>
+                <li class="prebuild-product">
+                    <div class="prebuild-product-img">
+                        <img src="" alt="image here">
+                    </div>
+                    <div class="prebuild-product-info">
+                        <h1>title</h1>
+                        <p>description</p>
+                    </div>
+                    
+                    <div class="prebuild-price-review">
+                        <p>price</p>
+                        <a href="">review</a>
+                    </div>
+                </li>
+                <li class="prebuild-product">
+                    <div class="prebuild-product-img">
+                        <img src="" alt="image here">
+                    </div>
+                    <div class="prebuild-product-info">
+                        <h1>title</h1>
+                        <p>description</p>
+                    </div>
+                    
+                    <div class="prebuild-price-review">
+                        <p>price</p>
+                        <a href="">review</a>
+                    </div>
+                </li>
+                <li class="prebuild-product">
+                    <div class="prebuild-product-img">
+                        <img src="" alt="image here">
+                    </div>
+                    <div class="prebuild-product-info">
+                        <h1>title</h1>
+                        <p>description</p>
+                    </div>
+                    
+                    <div class="prebuild-price-review">
+                        <p>price</p>
+                        <a href="">review</a>
+                    </div>
+                </li>
+                <li class="prebuild-product">
+                    <div class="prebuild-product-img">
+                        <img src="" alt="image here">
+                    </div>
+                    <div class="prebuild-product-info">
+                        <h1>title</h1>
+                        <p>description</p>
+                    </div>
+                    
+                    <div class="prebuild-price-review">
+                        <p>price</p>
+                        <a href="">review</a>
+                    </div>
+                </li>
+                <li class="prebuild-product">
+                    <div class="prebuild-product-img">
+                        <img src="" alt="image here">
+                    </div>
+                    <div class="prebuild-product-info">
+                        <h1>title</h1>
+                        <p>description</p>
+                    </div>
+                    
+                    <div class="prebuild-price-review">
+                        <p>price</p>
+                        <a href="">review</a>
+                    </div>
+                </li>
+                <li class="prebuild-product">
+                    <div class="prebuild-product-img">
+                        <img src="" alt="image here">
+                    </div>
+                    <div class="prebuild-product-info">
+                        <h1>title</h1>
+                        <p>description</p>
+                    </div>
+                    
+                    <div class="prebuild-price-review">
+                        <p>price</p>
+                        <a href="">review</a>
+                    </div>
+                </li>
+                <li class="prebuild-product">
+                    <div class="prebuild-product-img">
+                        <img src="" alt="image here">
+                    </div>
+                    <div class="prebuild-product-info">
+                        <h1>title</h1>
+                        <p>description</p>
+                    </div>
+                    
+                    <div class="prebuild-price-review">
+                        <p>price</p>
+                        <a href="">review</a>
+                    </div>
+                </li>
+                <li class="prebuild-product">
+                    <div class="prebuild-product-img">
+                        <img src="" alt="image here">
+                    </div>
+                    <div class="prebuild-product-info">
+                        <h1>title</h1>
+                        <p>description</p>
+                    </div>
+                    
+                    <div class="prebuild-price-review">
+                        <p>price</p>
+                        <a href="">review</a>
+                    </div>
+                </li>
+                <li class="prebuild-product">
+                    <div class="prebuild-product-img">
+                        <img src="" alt="image here">
+                    </div>
+                    <div class="prebuild-product-info">
+                        <h1>title</h1>
+                        <p>description</p>
+                    </div>
+                    
+                    <div class="prebuild-price-review">
+                        <p>price</p>
+                        <a href="">review</a>
+                    </div>
+                </li>
+                <li class="prebuild-product">
+                    <div class="prebuild-product-img">
+                        <img src="" alt="image here">
+                    </div>
+                    <div class="prebuild-product-info">
+                        <h1>title</h1>
+                        <p>description</p>
+                    </div>
+                    
+                    <div class="prebuild-price-review">
+                        <p>price</p>
+                        <a href="">review</a>
+                    </div>
+                </li>
+            </ul>
+            
+        </div>
+
+    </section>
+</html>
+
+{% endblock %}

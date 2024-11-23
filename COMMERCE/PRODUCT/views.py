@@ -84,7 +84,7 @@ def registerUser(request):
             user.username = user.username.lower()
             user.save()
             login(request, user)
-            return redirect('product:home')
+            return redirect('PRODUCT:home')
         else:
             messages.error(request,'An Error Occured during registration')
 

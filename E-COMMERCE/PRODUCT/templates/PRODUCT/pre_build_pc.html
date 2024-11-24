@@ -1,0 +1,85 @@
+
+{% extends 'master.html' %}
+
+{% block title %}Pre-Build Pc{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static '/styles/pre_build_pc.css' %}">
+
+<div class="nav-title">
+    <h1>Pre-Build PC</h1>
+    <p>
+        <!-- to HOME                             current page -->
+        <a href="#">Home</a> > <a href="#">Prebuild PC</a>    
+    </p>
+</div>
+
+<section class="content">
+    <!-- Filter Bar -->
+<div class="prebuild-filter-bar">
+    <h5>PRODUCTS</h5>
+    <select>
+    <option>Text here</option>
+    <!-- Add more options if needed -->
+    </select>
+    <select>
+        <option>Text here</option>
+        <!-- Add more options if needed -->
+    </select>
+    <input type="text" placeholder="Search here...                                           🔍">
+</div>
+
+<!-- Product Grid -->
+<section class="prebuild-product-grid">
+    <!-- Product Card -->
+    <ul class="prebuild-product-container">
+
+
+        {% for pc in prebuilds %}
+        <li class="prebuild-product-card">
+        <div class="prebuild-image-placeholder">
+            <img src="" alt="product-img">
+        </div>
+        
+        <div class="prebuild-product-title">
+            <h1>{{pc.bundle_name}}</h1>
+        </div>
+
+        <div class="prebuild-product-details-container">
+            <p class="prebuild-product-details"><span>Motherboard:</span><span>{{pc.processor_unit}}</span></p>
+            <p class="prebuild-product-details"><span>Processor:</span><span>{{pc.processor_unit}}</span></p>
+            <p class="prebuild-product-details"><span>Storage:</span><span></span>{{pc.storage_unit}}</p>
+            <p class="prebuild-product-details"><span>Memory:</span><span>{{pc.memory_unit}}</span></p>
+            <p class="prebuild-product-details"><span>Power Supply:</span><span>{{pc.PSU_unit}}</span></p>
+            <p class="prebuild-product-details"><span>CPU Cooler:</span><span>{{pc.CPU_cooler_unit}}</span></p>
+            <p class="prebuild-product-details"><span>Graphics Card:</span><span>{{pc.GPU_unit}}</span></p>
+            <p class="prebuild-product-details"><span>Case:</span><span>{{pc.case_unit}}</span></p>
+            
+
+            
+        </div>
+
+        <div class="prebuild-product-price">
+            <h1>${{pc.bundle_total_price}}</h1>
+        </div>
+
+        <div class="prebuild-product-btn">
+            <button>Read more</button>
+        </div>
+        </li>
+        {% endfor %}
+</ul>
+    
+            
+    <!-- Add more product cards as required for your layout -->
+</section>
+
+<!-- Footer -->
+
+
+</body>
+</html>
+
+</section>
+{% endblock %}

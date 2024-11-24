@@ -1,0 +1,112 @@
+{% extends 'master.html' %}
+
+{% block title %}Laptop{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static '/styles/laptop.css' %}">
+
+<div class="nav-title">
+    <h1>Laptop</h1>
+    <p>
+        <!-- to HOME                             current page -->
+        <a href="#">Home</a> > <a href="#">Laptop</a>
+    </p>
+</div>
+
+<section class="content">
+  <!-- Filter Bar -->
+<div class="filter-bar">
+  <h5>PRODUCTS</h5>
+  <select>
+  <option>Text here</option>
+  <!-- Add more options if needed -->
+  </select>
+  <select>
+      <option>Text here</option>
+      <!-- Add more options if needed -->
+  </select>
+  <input type="text" placeholder="Search here...                                           🔍">
+</div>
+
+  <!-- Product Grid -->
+<section class="product-grid">
+  <!-- Product Card -->
+  <ul class="product-container">
+
+<!-- djangotags -->
+      {% for laptop in laptops %}
+      <li class="product-card">
+        <div class="image-placeholder">
+          <img src="" alt="product-img">
+        </div>
+        
+        <div class="product-title">
+          <h1>{{laptop.name}}</h1>
+        </div>
+
+        <div class="product-details-container">
+          <p class="product-details">
+            <span>Processor:</span><span>{{laptop.processor}}</span>
+          </p>
+          <p class="product-details">
+            <span>Operating System:</span><span>{{laptop.os}}</span>
+          </p>
+          <p class="product-details">
+            <span>Graphics Card:</span><span>{{laptop.graphic_card}}</span>
+          </p>
+          <p class="product-details">
+            <span>Memory:</span><span>{{laptop.memory}}</span>
+          </p>
+          <p class="product-details">
+            <span>Storage:</span><span>{{laptop.storage}}</span>
+          </p>
+          <p class="product-details">
+            <span>Display:</span><span>{{laptop.display}}</span>
+          </p>
+          <p class="product-details">
+            <span>Camera:</span><span>{{laptop.camera}}</span>
+          </p>
+          <p class="product-details">
+            <span>Battery:</span><span>{{laptop.battery}}</span>
+          </p>
+          <p class="product-details">
+            <span>Keyboard:</span><span>{{laptop.keyboard}}</span>
+          </p>
+          <p class="product-details">
+            <span>Connection:</span><span>{{laptop.wifi}}</span>
+          </p>
+          <p class="product-details">
+            <span>Warranty:</span><span>{{laptop.warranty}}</span>
+          </p>
+          <p class="product-details">
+            <span>Color:</span><span>{{laptop.color}}</span>
+          </p>
+          
+        </div>
+
+        <div class="product-price">
+          <h1>${{laptop.price}}</h1>
+        </div>
+
+        <div class="product-btn">
+          <button>button 1</button>
+        </div>
+      </li>
+      {% endfor %}
+<!-- ==================================== -->
+
+</ul>
+    
+          
+  <!-- Add more product cards as required for your layout -->
+</section>
+
+<!-- Footer -->
+
+
+</body>
+</html>
+</section>
+
+{% endblock %}

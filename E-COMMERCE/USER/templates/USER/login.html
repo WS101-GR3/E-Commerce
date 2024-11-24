@@ -1,0 +1,25 @@
+{% extends "master.html" %}
+
+
+{% block title %}
+    Login | APP
+{% endblock  %}
+
+{% block content %}
+
+<section class="login-form-container">
+    <div class="login-form">
+        <form method="post" action="" >
+            {% csrf_token %}
+
+            {{form}}
+
+            <button type="submit" value="Login"  class="loginbtn">Login</button>
+        </form>
+    
+        <p>haven't signed up yet ?</p>
+        <a href="{% url 'USER:REGISTER' %}">Sign Up</a>
+    </div>
+</section>
+
+{% endblock  %}

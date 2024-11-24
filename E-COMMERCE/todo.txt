@@ -1,0 +1,46 @@
+E-COMMERCE REQUIREMENTS:
+
+•Landing Page - X
+•Add to Cart functionality - ON PROGRESS
+•Checkout Functionality
+•Login & Register Functionality - X
+•CRUD using Django Admin - X
+•SYSTEM BUILDER
+
+
+NOVEMBER 23, 2024:
+-TODO
+•CREATE THE USER AND LOGIN INTERFACE OR FUNCTION ----OKAY NA
+•INSERT DATA INTO THE MODEL ----- OKAY NA
+•CREATE VIEW LOGIC FOR EACH CATEGORY
+•REFINE THE MODELS CONSTRAINTS
+
+
+
+TODO: TONIGHT, 
+-INSERT THE LAPTOP DATA ---- OKAY NA
+-RENAME PRODUCT MODEL TO PARTS ---- OKAY NA
+-MODIFY USER MODEL TO ADD CART ---- OKAY NA
+-ADD ALL DATA ---- OKAY NA
+
+
+TODO: TODAY 3:30PM
+-AYUSIN ANG RELATIONSHIP NG BASKET -> BASKETITEMS -> USER ---- OKAY NA
+-AYUSING ANG TOTAL PRICE NG BASKET ---> HALF OKAY
+-CREATE A USERBUILD BUNDLE PACKAGE ---->
+-UPDATE THE THE GROUPS REPO -----> 
+
+
+THEN INTEGRATE ALL!!
+
+
+
+ADD TO CART=========================
+
+#Get the specific Basket
+UserBasket = Basket.objects.get(basket_owner=user.id)
+
+
+
+#Gather all items related to one basket
+Basket = BasketItems.objects.filter(basket=UserBasket.id)

@@ -13,7 +13,7 @@ class Basket(models.Model):
 
 
     def __str__(self) -> str:
-        return f'{self.basket_owner}"s Basket'
+        return f"{self.basket_owner}'s Basket"
 
 
 
@@ -24,4 +24,4 @@ class BasketItems(models.Model):
     basket_package = models.ForeignKey(PackageBundle, on_delete=models.CASCADE, related_name='PACKAGE_ITEMS', blank=True)
 
     def __str__(self) -> str:
-        return f'{self.basket}"s Item'
+        return f"{self.basket}'s Item"

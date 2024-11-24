@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            MASTER | APP
+        {% endblock  %}
+    </title>
+    <link rel="stylesheet" href="{% static 'styles/master.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/laptop.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/pre_build_pc.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/systemBuilder.css' %}">
+    {% comment %} <link rel="stylesheet" href="{% static 'styles/login.css' %}"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'styles/register.css' %}">
+
+
+
+
+</head>
+
+    <style>
+        *{
+            margin:0;
+        }
+    </style>
+
+<body>
+
+    <nav class="Navigation">
+        {% comment %} 
+            THE STYLING GOES HERE
+        {% endcomment %}
+        <div class="logo-search-user-container">
+          <h1 style="opacity: 0;">....</h1>
+          <h1>PCNEED</h1>
+          <div class="search-user-container">
+              {% if request.user.is_authenticated %}
+              
+              <p>Hello {{request.user}}</p>
+              <a href="{% url 'USER:LOGOUT' %}">Logout</a>
+
+              {% else %}
+              <a href="{% url 'USER:LOGIN' %}">Login</a>
+              <a href="">Cart</a>
+              {% endif %}
+          </div>
+          
+      </div>
+        </div>
+        <hr class="styled-hr">
+
+        <ul>
+          <li><a href="{% url 'HOME' %}">Home</a></li>
+          <li><a href="{% url 'PRODUCT:BUILD' %}">System Builder</a></li>
+          <li><a href="{% url 'PRODUCT:PRE-BUILD' %}">Prebuild PC</a></li>
+          <li><a href="{% url 'PRODUCT:LAPTOP' %}">Laptop</a></li>
+        </ul>
+
+    </nav>
+
+
+
+
+    
+    <main>
+        {% block content %}
+            <p>MASTER INDEX</p>
+        {% endblock  %}
+    </main>
+
+
+    <footer class="footer">
+        <div class="footer-container">
+          <div class="logo-section">
+            <h2>YOUR LOGO</h2>
+            <p>Your Tagline here</p>
+          </div>
+          <div class="links-section">
+            <div class="link-column">
+              <h3>Title here</h3>
+              <ul>
+                <li>text</li>
+                <li>text</li>
+                <li>text</li>
+                <li>text</li>
+                <li>text</li>
+              </ul>
+            </div>
+            <div class="link-column">
+              <h3>Title here</h3>
+              <ul>
+                <li>text</li>
+                <li>text</li>
+                <li>text</li>
+                <li>text</li>
+                <li>text</li>
+              </ul>
+            </div>
+            <div class="link-column">
+              <h3>Title here</h3>
+              <ul>
+                <li>text</li>
+                <li>text</li>
+                <li>text</li>
+                <li>text</li>
+                <li>text</li>
+              </ul>
+            </div>
+          </div>
+          <div class="contact-section">
+            <h3>Contact Us</h3>
+            <div class="contact-icons">
+              <div class="icon"></div>
+              <div class="icon"></div>
+              <div class="icon"></div>
+              <div class="icon"></div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>©2024 COMPANY NAME, LLC. All rights reserved.</p>
+        </div>
+      </footer>
+
+</body>
+</html>

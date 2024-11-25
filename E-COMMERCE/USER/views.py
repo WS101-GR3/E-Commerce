@@ -13,6 +13,13 @@ def register_user(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             login(request, form.save())
+
+            # Creates a basket/cart upon a new user registration
+            newBasket = Basket(user_id=request.user)
+            newBasket.save()
+
+
+
             return redirect('PRODUCT:LAPTOP')
     else:
         form = UserCreationForm()
@@ -38,17 +45,10 @@ def logout_user(request):
     return redirect('HOME')
 
 def getUserCart(request, userID):
-    # pass
-
-    # usersBasket = Basket.objects.get(user_id=userID)
-    a = Basket.objects.all() #Returns an array of basket instances
-    usersBasketItems = BasketItems.objects.filter(basket=a[0]) #Fetch the items of a basket
-    items = usersBasketItems[0] #Contains the basket items of a certain user's basket
-    # print(items.basket_laptop.name) 
-
+    print(userID) #id of current login user
 
     #Get One User -> return a list of instances and then get the first instances
-    userInstance = (User.objects.all())[0]
+    userInstance = User.objects.get(id=userID)
 
     # Get User's Basket -> return one instance since user and basket have one to one RS
     userBasket = Basket.objects.get(user_id=userInstance)
@@ -60,7 +60,16 @@ def getUserCart(request, userID):
 
     for i in range(len(basketList)):
         ko = basketList[i]
-        items.append(ko.basket_laptop.name)
-    print(items)
+        items.append(ko.basket_laptop)
+        items.append(ko.basket_package)
 
-    return HttpResponse(a)
+
+    print(f'''
+    
+    {userInstance}'s BASKET
+
+    ITEMS: {items}
+
+    ''')
+
+    return HttpResponse(userBasket)

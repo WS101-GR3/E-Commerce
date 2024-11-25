@@ -65,7 +65,9 @@
         </div>
 
         <div class="prebuild-product-btn">
-            <button>Read more</button>
+            <button>
+                <a href="{% url 'USER:ADD_TO_CART' product_type='DESKTOP' userID=request.user.id product_id=pc.unit_id %}">Add to Cart</a>
+            </button>
         </div>
         </li>
         {% endfor %}

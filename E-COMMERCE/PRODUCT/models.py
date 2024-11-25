@@ -84,6 +84,8 @@ class Laptop(models.Model):
     color = models.CharField(max_length=100)
     price = models.BigIntegerField(default=150)
 
+    def __str__(self):
+        return self.name
 
 
 class Review(models.Model):

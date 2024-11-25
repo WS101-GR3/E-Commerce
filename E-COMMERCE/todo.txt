@@ -35,12 +35,5 @@ THEN INTEGRATE ALL!!
 
 
 
-ADD TO CART=========================
-
-#Get the specific Basket
-UserBasket = Basket.objects.get(basket_owner=user.id)
-
-
-
-#Gather all items related to one basket
-Basket = BasketItems.objects.filter(basket=UserBasket.id)
+TODO: TONIGHT, NOV 25, 8:40
+CREATE ADD TO CART - OKS NA

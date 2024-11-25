@@ -43,10 +43,10 @@
               
               <p>Hello {{request.user}}</p>
               <a href="{% url 'USER:LOGOUT' %}">Logout</a>
+              <a href="{% url 'USER:FETCHCART' userID=request.user %}">Cart</a>
 
               {% else %}
               <a href="{% url 'USER:LOGIN' %}">Login</a>
-              <a href="">Cart</a>
               {% endif %}
           </div>
           

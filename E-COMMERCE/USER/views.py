@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.models import User
 from USER.models import Basket, BasketItems
+from PRODUCT.models import Laptop, PackageBundle
 from django.http import HttpResponse
 
 # Create your views here.
@@ -45,7 +46,6 @@ def logout_user(request):
     return redirect('HOME')
 
 def getUserCart(request, userID):
-    print(userID) #id of current login user
 
     #Get One User -> return a list of instances and then get the first instances
     userInstance = User.objects.get(id=userID)
@@ -62,14 +62,25 @@ def getUserCart(request, userID):
         ko = basketList[i]
         items.append(ko.basket_laptop)
         items.append(ko.basket_package)
+    return HttpResponse(items)
 
 
-    print(f'''
+
+def addToCart(request, product_type, userID, product_id):
+    #Get the current user Instance
+    userInstance = User.objects.get(id=userID)
+
+    #Get the current user's basket
+    userBasket = Basket.objects.get(user_id=userInstance)
     
-    {userInstance}'s BASKET
+    #add an BasketItems based on product_type
+    if product_type == 'DESKTOP':
+        product = PackageBundle.objects.get(unit_id=product_id)
+        basketInsert = BasketItems(basket=userBasket, basket_package=product)
+    elif product_type == 'LAPTOP':
+        product = Laptop.objects.get(lap_id=product_id)
+        basketInsert = BasketItems(basket=userBasket, basket_laptop=product)
+    
+    basketInsert.save()
+    return HttpResponse(f'{product} is ADDED')
 
-    ITEMS: {items}
-
-    ''')
-
-    return HttpResponse(userBasket)

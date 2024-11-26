@@ -48,12 +48,12 @@ def logout_user(request):
 def getUserCart(request, userID):
     Items = Basket.objects.filter(user_id=userID)
 
-    a = []
+    itemNames = []
 
     for item in Items:
         a.append(item.basket_item_name)
 
-    return HttpResponse(f'{a}')
+    return HttpResponse(f'{itemNames}')
 
 
 

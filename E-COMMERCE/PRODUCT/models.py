@@ -45,7 +45,8 @@ class PackageBundle(models.Model):
     unit_id = models.BigAutoField(null=False, primary_key=True)
     bundle_category = models.CharField(max_length=100, choices=category, default=category[0])
     bundle_banner = models.ImageField(default='Desert.jpg')
-    bundle_name = models.CharField(max_length=200)
+    
+    name = models.CharField(max_length=200)
     motherboard_unit = models.ForeignKey(Parts, on_delete=models.CASCADE, default=None, related_name='bundle_motherboard')
     processor_unit= models.ForeignKey(Parts, on_delete=models.CASCADE, default=None, related_name='bundle_processor')
     storage_unit = models.ForeignKey(Parts, on_delete=models.CASCADE, default=None,related_name='bundle_storage')
@@ -57,10 +58,11 @@ class PackageBundle(models.Model):
     GPU_unit = models.ForeignKey(Parts, on_delete=models.CASCADE, default=None, related_name='bundle_GPU')
     case_unit = models.ForeignKey(Parts, on_delete=models.CASCADE, default=None, related_name='bundle_case')
 
-    bundle_total_price = models.BigIntegerField(default=0)
+    price = models.BigIntegerField(default=0)
 
     def __str__(self) -> str:
-        return self.bundle_name
+        return self.name
+
 
 
 class Laptop(models.Model):

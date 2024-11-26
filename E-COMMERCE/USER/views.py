@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.models import User
-from USER.models import Basket, BasketItems
+from USER.models import Basket
 from PRODUCT.models import Laptop, PackageBundle
 from django.http import HttpResponse
 
@@ -46,41 +46,29 @@ def logout_user(request):
     return redirect('HOME')
 
 def getUserCart(request, userID):
+    Items = Basket.objects.filter(user_id=userID)
 
-    #Get One User -> return a list of instances and then get the first instances
-    userInstance = User.objects.get(id=userID)
+    a = []
 
-    # Get User's Basket -> return one instance since user and basket have one to one RS
-    userBasket = Basket.objects.get(user_id=userInstance)
-    
-    #Get Basket's Items -> return a list of basketItems associated with user's basket
-    basketList = BasketItems.objects.filter(basket=userBasket)
+    for item in Items:
+        a.append(item.basket_item_name)
 
-    items = []
-
-    for i in range(len(basketList)):
-        ko = basketList[i]
-        items.append(ko.basket_laptop)
-        items.append(ko.basket_package)
-    return HttpResponse(items)
+    return HttpResponse(f'{a}')
 
 
 
 def addToCart(request, product_type, userID, product_id):
-    #Get the current user Instance
-    userInstance = User.objects.get(id=userID)
-
-    #Get the current user's basket
-    userBasket = Basket.objects.get(user_id=userInstance)
-    
-    #add an BasketItems based on product_type
     if product_type == 'DESKTOP':
         product = PackageBundle.objects.get(unit_id=product_id)
-        basketInsert = BasketItems(basket=userBasket, basket_package=product)
-    elif product_type == 'LAPTOP':
+    elif product_id == 'LAPTOP':
         product = Laptop.objects.get(lap_id=product_id)
-        basketInsert = BasketItems(basket=userBasket, basket_laptop=product)
     
-    basketInsert.save()
+    insertBasket = Basket(
+        user_id=userID,
+        basket_item_id=product_id,
+        basket_item_name=product.name,
+        basket_item_price=product.price
+    )
+
     return HttpResponse(f'{product} is ADDED')
 

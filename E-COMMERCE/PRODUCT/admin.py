@@ -17,9 +17,9 @@ class PartsAdmin(admin.ModelAdmin):
 
 @admin.register(PackageBundle)
 class PackageBundle(admin.ModelAdmin):
-    list_display = ('bundle_name','motherboard_unit','processor_unit')
+    list_display = ('name','motherboard_unit','processor_unit')
     order_by = ('-unit_id')
-    search_fields = ('bundle_name',)
+    search_fields = ('name',)
     list_filter = ('motherboard_unit','processor_unit','storage_unit','memory_unit')
 
 
